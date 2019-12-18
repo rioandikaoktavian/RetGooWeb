@@ -3,20 +3,19 @@ include 'file_location.php';
 
 // notice mati
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$dir = $lokasi . "ServerX/x86/";
-
+$dir = $lokasi . "WSM/2.0/windows/x64/";
 
 $directory_file = opendir($dir);
 $file = readdir($directory_file);
 if (is_dir($dir)) {
     if ($directory_file = opendir($dir)) {
-        $arr_serverx86 = array();
+        $arr_wsm_windows64 = array();
         while (($file = readdir($directory_file)) !== false) {
             $tampungData = array($file);
             // tampilkan nm file
             $dataStringArray = implode("|", $tampungData);
             // gunakan fungsi regex utk ambil karakter versi
-            preg_match('/((\d+).(\d+).(\d+).(\d+))/', $dataStringArray, $matches);
+            preg_match('/((\d+).(\d+).(\d+).(\d+).)/', $dataStringArray, $matches);
             // gunakan fungsi regex utk ambil karakter bit versi
             preg_match('/(x(\d+))/', $dataStringArray, $karakter_versi_bit);
             // hitung
@@ -26,7 +25,7 @@ if (is_dir($dir)) {
             $build = $matches[5] * 1;
             $total = intval($major) + intval($minor) + intval($revision) + intval($build);
 
-            array_push($arr_serverx86, $dataStringArray);
+            array_push($arr_wsm_windows64, $dataStringArray);
         }
     }
 }

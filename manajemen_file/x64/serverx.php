@@ -1,8 +1,9 @@
 <?php
+include "file_location.php";
 
 // notice mati
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$dir = "assets/Apps/Serverx/x64";
+$dir = $lokasi . "Serverx/x64";
 
 $directiory_file = opendir($dir);
 $file = readdir($directiory_file);
@@ -27,6 +28,4 @@ if (is_dir($dir)) {
             array_push($arr_serverx64, $dataStringArray);
         }
     }
-    print_r(max($arr_serverx64));
 }
-?>

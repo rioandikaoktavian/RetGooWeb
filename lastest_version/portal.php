@@ -18,6 +18,7 @@
                     <tbody>
                         <tr>
                             <td>
+                                <!-- tampilkan file x64 -->
                                 <?php
                                 rsort($arr_portal64);
                                 foreach ($arr_portal64 as $i) {
@@ -35,6 +36,7 @@
                     <tbody>
                         <tr>
                             <td>
+                                <!-- tampilkan file x86 -->
                                 <?php
                                 rsort($arr_portal86);
                                 foreach ($arr_portal86 as $i) {

@@ -8,9 +8,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             <?php
-
+            // kondisi untuk cek OS apa yang sedang mengakses proses ini
             if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
                 ?>
                 <div class="modal-body">
@@ -23,10 +22,11 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    <!-- tampilkan file x64 bit -->
                                     <?php
-                                        rsort($arr_wsm64);
-                                        foreach ($arr_wsm64 as $i) {
-                                            echo "<a href='download.php?wsm64=$i'>" . $i . "</a><br>";
+                                        rsort($arr_wsm_windows64);
+                                        foreach ($arr_wsm_windows64 as $i) {
+                                            echo "<a href='download.php?wsm_windows64=$i'>" . $i . "</a><br>";
                                         }
                                         ?>
                                     </a>
@@ -42,10 +42,11 @@
                         <tbody>
                             <tr>
                                 <td>
+                                    <!-- tampilkan file x86 bit -->
                                     <?php
-                                        rsort($arr_wsm86);
-                                        foreach ($arr_wsm86 as $i) {
-                                            echo "<a href='download.php?wsm86=$i'>" . $i . "</a><br>";
+                                        rsort($arr_wsm_windows86);
+                                        foreach ($arr_wsm_windows86 as $i) {
+                                            echo "<a href='download.php?wsm_windows86=$i'>" . $i . "</a><br>";
                                         }
                                         ?>
                                     </a>
@@ -55,10 +56,10 @@
                         </tbody>
                     </table>
                 </div>
-
-            <?php } else {
+            <?php
+                // kondisi jika bukan OS Windows yang mengakses proses
+            } else {
                 ?>
-
                 <div class="modal-body">
                     <table class="table table-sm">
                         <thead>
@@ -69,9 +70,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href=""><?php print_r(max($arr_wsm64)); ?></a>
-                                    <br>
-                                    <a href=""><?php print_r(max($arr_wsm64)); ?></a>
+                                    <?php
+                                        rsort($arr_wsm_linux64);
+                                        foreach ($arr_wsm_linux64 as $i) {
+                                            echo "<a href='download.php?wsm_linux64=$i'>" . $i . "</a><br>";
+                                        }
+                                        ?>
                                 </td>
                             </tr>
                         </tbody>
@@ -83,9 +87,12 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href=""><?php print_r(max($arr_wsm86)); ?></a>
-                                    <br>
-                                    <a href=""><?php print_r(max($arr_wsm86)); ?></a>
+                                    <?php
+                                        rsort($arr_wsm_linux86);
+                                        foreach ($arr_wsm_linux86 as $i) {
+                                            echo "<a href='download.php?wsm_linux86=$i'>" . $i . "</a><br>";
+                                        }
+                                        ?>
                                 </td>
                             </tr>
                         </tbody>

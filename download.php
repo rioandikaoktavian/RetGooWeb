@@ -1,45 +1,50 @@
 <?php
+include "file_location.php";
 
 if (isset($_GET['portal86'])) {
     $filename    = $_GET['portal86'];
-    $back_dir    = "assets/Apps/Portal/x86/";
+    $back_dir    = $lokasi . "Portal/x86/";
     $file = $back_dir . $_GET['portal86'];
 } elseif (isset($_GET['portal64'])) {
     $filename    = $_GET['portal64'];
-    $back_dir    = "assets/Apps/Portal/x64/";
+    $back_dir    = $lokasi . "Portal/x64/";
     $file = $back_dir . $_GET['portal64'];
 } else if (isset($_GET['studio86'])) {
     $filename    = $_GET['studio86'];
-    $back_dir    = "assets/Apps/Studio/x86/";
+    $back_dir    = $lokasi . "Studio/x86/";
     $file = $back_dir . $_GET['studio86'];
 } else if (isset($_GET['studio64'])) {
     $filename    = $_GET['studio64'];
-    $back_dir    = "assets/Apps/Studio/x64/";
+    $back_dir    = $lokasi . "Studio/x64/";
     $file = $back_dir . $_GET['studio64'];
 } else if (isset($_GET['wsm'])) {
     $filename    = $_GET['wsm'];
-    $back_dir    = "assets/Apps/WSM/2.0/windows/x64/";
+    $back_dir    = $lokasi . "WSM/2.0/windows/x64/";
     $file = $back_dir . $_GET['wsm'];
 } else if (isset($_GET['server86'])) {
     $filename = $_GET['server86'];
-    $back_dir = "assets/Apps/ServerX/x86/";
+    $back_dir = $lokasi . "ServerX/x86/";
     $file = $back_dir . $_GET['server86'];
 } else if (isset($_GET['server64'])) {
     $filename = $_GET['server64'];
-    $back_dir = "assets/Apps/ServerX/x64/";
+    $back_dir = $lokasi . "ServerX/x64/";
     $file = $back_dir . $_GET['server64'];
-} elseif (isset($_GET['wsm64'])) {
-    if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
-        $filename = $_GET['wsm64'];
-        $back_dir = "assets/Apps/WSM/2.0/windows/x64/";
-        $file = $back_dir . $_GET['wsm64'];
-    }
-}else if (isset($_GET['wsm86'])) {
-    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-        $filename = $_GET['wsm86'];
-        $back_dir = "assets/Apps/WSM/2.0/windows/x86/";
-        $file = $back_dir . $_GET['wsm86'];
-    }
+} elseif (isset($_GET['wsm_windows64'])) {
+    $filename = $_GET['wsm_windows64'];
+    $back_dir = $lokasi . "WSM/2.0/windows/x64/";
+    $file = $back_dir . $_GET['wsm_windows64'];
+} else if (isset($_GET['wsm_windows86'])) {
+    $filename = $_GET['wsm_windows86'];
+    $back_dir = $lokasi . "WSM/2.0/windows/x86/";
+    $file = $back_dir . $_GET['wsm_windows86'];
+} else if (isset($_GET['wsm_linux86'])) {
+    $filename = $_GET['wsm_linux86'];
+    $back_dir = $lokasi . "WSM/2.0/linux/x86";
+    $file = $back_dir . $_GET['wsm_linux86'];
+} else if (isset($_GET['wsm_linux64'])) {
+    $filename = $_GET['wsm_linux64'];
+    $back_dir = $lokasi . "WSM/2.0/linux/x64";
+    $file = $back_dir . $_GET['wsm_linux64'];
 }
 
 if (file_exists($file)) {

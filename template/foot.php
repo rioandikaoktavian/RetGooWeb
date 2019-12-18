@@ -10,21 +10,21 @@
                     <div id="errormessage"></div>
                     <form action="" method="post" role="form" class="contactForm">
                         <div class="form-group">
-                            <p><h3>Kirim Email</h3></p>
+                            <p style="font-family: Poppins; font-size: 25px;" ><h3>Kirim Email</h3></p>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="nama" data-rule="minlen:4" data-msg="Minimal 4 karakter" />
-                            <div class="validation"></div>
+                            <input style="font-family: Poppins;"  type="text" name="name" class="form-control" id="name" placeholder="nama" data-rule="minlen:4" data-msg="Minimal 4 karakter" />
+                            <div class="validation" style="font-family: Poppins;" ></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="email" data-rule="email" data-msg="Masukan email yang benar" />
-                            <div class="validation"></div>
+                            <input type="email" style="font-family: Poppins;"  class="form-control" name="email" id="email" placeholder="email" data-rule="email" data-msg="Masukan email yang benar" />
+                            <div class="validation" style="font-family: Poppins;" ></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Tulis sesuatu untuk kami" placeholder="message"></textarea>
-                            <div class="validation"></div>
+                            <textarea class="form-control" style="font-family: Poppins;"  name="message" rows="5" data-rule="required" data-msg="Tulis sesuatu untuk kami" placeholder="message"></textarea>
+                            <div class="validation" style="font-family: Poppins;" ></div>
                         </div>
-                        <div class=""><button type="submit">Kirim</button></div>
+                        <div class=""><button type="submit" style="font-family: Poppins;" >Kirim</button></div>
                     </form>
                 </div>
             </div>
@@ -32,21 +32,21 @@
 
                 <div class="info text-bold">
                     <div>
-                        <p><h3>Informasi Lebih Lanjut</h3></p>
+                        <p style="font-family: Poppins; font-size: 25px;"><h3>Informasi Lebih Lanjut</h3></p>
                     </div>
                     <div>
                         <i class="fa fa-building"></i>
-                        <p><b>Terra Building lantai 2-3 <br> Jl. Terusan Candi Mendut 9B Malang</b></p>
+                        <p style="font-family: Poppins;" ><b>Terra Building lantai 2-3 <br> Jl. Terusan Candi Mendut 9B Malang</b></p>
                     </div>
 
                     <div class="email">
                         <i class="fa fa-envelope"></i>
-                        <p><b>marketing@retgoo.id</b></p>
+                        <p style="font-family: Poppins;" ><b>marketing@retgoo.id</b></p>
                     </div>
 
                     <div class="phone">
                         <i class="fa fa-phone"></i>
-                        <p><b>0823 3613 7304</b></p>
+                        <p style="font-family: Poppins;" ><b>0823 3613 7304</b></p>
                     </div>
                 </div>
 
@@ -59,7 +59,8 @@
             </div>
         </div>
     </div>
-</section><!-- #contact -->
+</section>
+<!-- #contact -->
 
 <footer class="footer">
     <div class="container">

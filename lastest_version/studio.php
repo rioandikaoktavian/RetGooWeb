@@ -18,6 +18,7 @@
                     <tbody>
                         <tr>
                             <td>
+                                <!-- tampilkan file x64 bit -->
                                 <?php
                                 rsort($arr_studio64);
                                 foreach ($arr_studio64 as $i) {
@@ -35,6 +36,7 @@
                     <tbody>
                         <tr>
                             <td>
+                                <!-- tampilkan file x86 bit -->
                                 <?php
                                 rsort($arr_studio86);
                                 foreach ($arr_studio86 as $i) {

@@ -1,9 +1,9 @@
 <?php
+include "file_location.php";
 
 // notice mati
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$dir = "assets/Apps/Portal/x64/";
-$no = 1;
+$dir = $lokasi . "Portal/x64/";
 
 $directory_file = opendir($dir);
 $file = readdir($directory_file);
@@ -25,8 +25,7 @@ if (is_dir($dir)) {
             $build = $matches[5] * 1;
             $total = intval($major) + intval($minor) + intval($revision) + intval($build);
 
-            array_push($arr_portal64, $dataStringArray); 
+            array_push($arr_portal64, $dataStringArray);
         }
     }
-    print_r(max($arr_portal64));
 }

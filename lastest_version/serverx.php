@@ -18,12 +18,12 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a href="google.com">
-                                    <?php
-                                    rsort($arr_serverx64);
-                                    foreach ($arr_serverx64 as $i) {
-                                        echo "<a href=download.php?server64=$i>" . $i . "</a><br>";
-                                    } ?>
+                                <!-- tampilkan file x64 bit -->
+                                <?php
+                                rsort($arr_serverx64);
+                                foreach ($arr_serverx64 as $i) {
+                                    echo "<a href=download.php?server64=$i>" . $i . "</a><br>";
+                                } ?>
                                 </a>
                             </td>
                         </tr>
@@ -36,12 +36,12 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a href="">
-                                    <?php
-                                    rsort($arr_serverx86);
-                                    foreach ($arr_serverx86 as $i) {
-                                        echo "<a href='download.php?server86=$i'>" . $i . "</a><br>";
-                                    } ?>
+                                <!-- tampilkan file x86 bit -->
+                                <?php
+                                rsort($arr_serverx86);
+                                foreach ($arr_serverx86 as $i) {
+                                    echo "<a href='download.php?server86=$i'>" . $i . "</a><br>";
+                                } ?>
                                 </a>
                             </td>
                         </tr>

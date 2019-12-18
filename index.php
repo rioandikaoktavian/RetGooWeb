@@ -7,8 +7,10 @@ include 'manajemen_file/x86/portal.php';
 include 'manajemen_file/x64/portal.php';
 include 'manajemen_file/x86/studio.php';
 include 'manajemen_file/x64/studio.php';
-include 'manajemen_file/x86/wsm.php';
-include 'manajemen_file/x64/wsm.php';
+include 'manajemen_file/x86/wsm_windows.php';
+include 'manajemen_file/x64/wsm_windows.php';
+include 'manajemen_file/x86/wsm_linux.php';
+include 'manajemen_file/x64/wsm_linux.php';
 ?>
 
 <body style="background-color: #f8f8f8;">
@@ -17,7 +19,7 @@ include 'manajemen_file/x64/wsm.php';
             <div id="logo" class="pull-left">
                 <h1>
                     <a href="#pricing" style="font-family: Poppins; font-size: 25px;" class="scrollto">
-                        <img src="assets/img/RetGoo-Logo-Flat.png" alt="" height="55" width="60">
+                        <img src="assets/img/logo/RetGoo-Logo-Flat.png" alt="" height="55" width="60">
                         RetGoo Sentris Informa
                     </a>
                 </h1>
@@ -138,8 +140,18 @@ include 'manajemen_file/x64/wsm.php';
                             </ul>
                             <div class="table_btn">
                                 <p class="separator">Lastest Version
-                                    <a style="border-radius: 15px 15px; " href="download.php?wsm86=<?php print_r(max($arr_wsm86)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (32 bit)</a>
-                                    <a style="border-radius: 15px 15px; " href="download.php?wsm64=<?php print_r(max($arr_wsm64)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (64 bit)</a>
+                                    <?php
+                                    if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+                                        ?>
+                                        <a style="border-radius: 15px 15px; " href="download.php?wsm_windows86=<?php print_r(max($arr_wsm_windows86)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (32 bit)</a>
+                                        <a style="border-radius: 15px 15px; " href="download.php?wsm_windows64=<?php print_r(max($arr_wsm_windows64)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (64 bit)</a>
+                                    <?php
+                                    } else {
+                                        ?>
+                                        <a style="border-radius: 15px 15px; " href="download.php?wsm_linux86=<?php print_r(max($arr_wsm_linux86)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (32 bit)</a>
+                                        <a style="border-radius: 15px 15px; " href="download.php?wsm_linux64=<?php print_r(max($arr_wsm_linux64)); ?>" class="btn col-md-12 py-2 font-weight-bold"><i class="fa fa-download"></i>Download (64 bit)</a>
+                                    <?php
+                                    } ?>
                                 </p>
                             </div>
                             <small><a href="" data-toggle="modal" class="separator" data-target="#modalWsm">Other Version >></a></small>
@@ -153,10 +165,10 @@ include 'manajemen_file/x64/wsm.php';
     include 'template/foot.php';
     ?>
 
-<!-- modal -->
-<?php
-include "lastest_version/serverx.php";
-include "lastest_version/portal.php";
-include "lastest_version/studio.php";
-include "lastest_version/wsm.php";
-?>
+    <!-- modal -->
+    <?php
+    include "lastest_version/serverx.php";
+    include "lastest_version/portal.php";
+    include "lastest_version/studio.php";
+    include "lastest_version/wsm.php";
+    ?>

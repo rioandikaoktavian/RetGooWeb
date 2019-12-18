@@ -1,15 +1,15 @@
 <?php
+include 'file_location.php';
 
 // notice mati
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
-$dir = "assets/Apps/WSM/2.0/windows/x64/";
-$no = 1;
+$dir = $lokasi . "WSM/2.0/windows/x86/";
 
 $directory_file = opendir($dir);
 $file = readdir($directory_file);
 if (is_dir($dir)) {
     if ($directory_file = opendir($dir)) {
-        $arr_wsm64 = array();
+        $arr_wsm_windows86 = array();
         while (($file = readdir($directory_file)) !== false) {
             $tampungData = array($file);
             // tampilkan nm file
@@ -25,8 +25,7 @@ if (is_dir($dir)) {
             $build = $matches[5] * 1;
             $total = intval($major) + intval($minor) + intval($revision) + intval($build);
 
-            array_push($arr_wsm64, $dataStringArray); 
+            array_push($arr_wsm_windows86, $dataStringArray);
         }
     }
-    print_r(max($arr_wsm64));
 }
